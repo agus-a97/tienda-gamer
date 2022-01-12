@@ -1,5 +1,7 @@
 import React from "react";
 import { Navbar, Container, Nav} from 'react-bootstrap'
+import CartWidget from "./cartWidget/CartWidget"
+
 // //componente basado en funciones (hooks)
 // // export default indica que es un componente
 export default function NavBar() {
@@ -9,10 +11,13 @@ export default function NavBar() {
                 <Container>
                     <Navbar.Brand href="#home">Tienda Gamer</Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link href="#home">Inicio</Nav.Link>
-                        <Nav.Link href="#features">Productos</Nav.Link>
-                        <Nav.Link href="#pricing">Contacto</Nav.Link>
+                        <Nav.Link href="#inicio">Inicio</Nav.Link>
+                        <Nav.Link href="#productos">Productos</Nav.Link>
+                        <Nav.Link href="#contacto">Contacto</Nav.Link>
                     </Nav>
+
+                    <CartWidget/>
+
                 </Container>
             </Navbar>
         </>
