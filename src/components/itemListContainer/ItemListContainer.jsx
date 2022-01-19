@@ -1,5 +1,6 @@
 import React from 'react'
 import { ItemCount } from './itemCount/ItemCount'
+import { ItemList } from './itemList/ItemList'
 
 export const ItemListContainer = (props) => {
     return (
@@ -7,6 +8,8 @@ export const ItemListContainer = (props) => {
             <h1 className='titulo-1'>{props.gretting}</h1>
 
             <ItemCount initial={1} stock={5}/>
+
+            <ItemList />
         </div>
     )
 }
