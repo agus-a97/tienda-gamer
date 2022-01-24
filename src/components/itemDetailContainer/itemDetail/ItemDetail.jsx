@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
 import { Card, Button, ButtonGroup, Col } from 'react-bootstrap'
 
-export const Item = ({ product }) => {
+export const ItemDetail = ({ producto }) => {
 
 
-    const [count, setCount] = useState(product.initial);
-    const [acum, setAcum] = useState(product.price);
+    const [count, setCount] = useState(producto.initial);
+    const [acum, setAcum] = useState(producto.price);
 
     function sumarProd() {
         const newValue = count + 1;
-        const newPrice = acum + product.price
-        if (newValue <= product.stock) {
+        const newPrice = acum + producto.price
+        if (newValue <= producto.stock) {
             setCount(newValue)
             setAcum(newPrice)
         }
@@ -18,33 +18,34 @@ export const Item = ({ product }) => {
 
     function restarProd() {
         const newValue = count - 1;
-        const newPrice = acum - product.price
-        if (newValue >= product.initial) {
+        const newPrice = acum - producto.price
+        if (newValue >= producto.initial) {
             setCount(newValue)
             setAcum(newPrice)
         }
     }
 
     function onAdd() {
-        (count === product.initial) ?
-            alert(` Reservaste ${count} pasaje para ${product.title} \n Total a pagar ${acum}`)
+        (count === producto.initial) ?
+            alert(` Reservaste ${count} pasaje para ${producto.title} \n Total a pagar ${acum}`)
             :
-            alert(` Reservaste ${count} pasajes para ${product.title} \n Total a pagar ${acum}`)
+            alert(` Reservaste ${count} pasajes para ${producto.title} \n Total a pagar ${acum}`)
     }
     return (
         <div>
+            <h3>ItemDetail Cargado</h3>
             <Col>
                 <Card style={{ width: '18rem' }}>
 
                     <Card.Body>
-                        <Card.Img variant="top" src={product.pictureUrl} />
+                        <Card.Img variant="top" src={producto.pictureUrl} />
 
-                        <Card.Title>{product.title}</Card.Title>
+                        <Card.Title>{producto.title}</Card.Title>
 
                         <Card.Text>
-                            Precio: {product.price}
+                            Precio: {producto.price}
                             <br />
-                            Reserva Minima: {product.initial}
+                            Reserva Minima: {producto.initial}
                             <br />
                             Cantidad: {count}
                             <br />

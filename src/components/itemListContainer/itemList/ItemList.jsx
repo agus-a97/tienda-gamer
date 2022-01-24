@@ -1,50 +1,40 @@
-import React, { useEffect, useState } from 'react';
-import { promesaProd } from '../../products'
+import React from 'react';
 import { Item } from '../item/Item'
-import { Button, Spinner } from 'react-bootstrap';
+import { Button, Spinner, Row, CardGroup } from 'react-bootstrap';
 
-export const ItemList = () => {
+export const ItemList = (arrayProductos) => {
 
-    const [llegoLaPromesa, setLLegoLaPromesa] = useState(false);
-
-    const [arrayProductos, setArrayProductos] = useState([]);
-
-    useEffect(() => {
-
-        promesaProd
-            .then((res) => {
-                // console.log(res);
-                setArrayProductos(res)
-                setLLegoLaPromesa(true)
-            })
-
-    }, [])
-
+    console.log(arrayProductos.arrayProductos);
     return (
-    <>
-        <h3>Lista de productos:</h3>
+        <>
+            <Row className="justify-content-md-center">
 
-        {
-            (llegoLaPromesa) ?
-                <>
-                    {arrayProductos.map(item => {
-                        // console.log(item);
-                        return <Item product={item} initial={1} stock={5} />
-                    })}
-                </>
-                :
-                <>
-                    <Button variant="primary" disabled>
-                        <Spinner
-                            as="span"
-                            animation="border"
-                            size="sm"
-                            role="status"
-                            aria-hidden="true"
-                        />
-                        Cargando...
-                    </Button>{' '}
-                </>
-        }
-    </>);
+                <h3>Lista de productos:</h3>
+                <CardGroup>
+                {
+                    (arrayProductos.arrayProductos.length > 0) ?
+                        <>
+                            {arrayProductos.arrayProductos.map(item => {
+                                console.log(item);
+                                return <Item product={item} />
+                            })}
+                        </>
+                        :
+                        <>
+                            <Button variant="primary" disabled>
+                                <Spinner
+                                    as="span"
+                                    animation="border"
+                                    size="sm"
+                                    role="status"
+                                    aria-hidden="true"
+                                />
+                                Cargando...
+                            </Button>{' '}
+                        </>
+                }
+                </CardGroup>
+            </Row>
+        </>);
+
 };
