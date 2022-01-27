@@ -36,9 +36,9 @@ export const ItemCount = ({ producto, onAdd }) => {
             </Card.Text>
 
             <ButtonGroup aria-label="Basic example">
-                <Button variant="secondary" onClick={restarProd}>-</Button>
-                <Button variant="secondary" onClick={onAdd}>Agregar</Button>
-                <Button variant="secondary" onClick={sumarProd}>+</Button>
+                <Button variant="primary" onClick={restarProd}>-</Button>
+                <Button variant="primary" onClick={()=> onAdd(count,acum)}>Agregar</Button>
+                <Button variant="primary" onClick={sumarProd}>+</Button>
             </ButtonGroup>
 
         </div>

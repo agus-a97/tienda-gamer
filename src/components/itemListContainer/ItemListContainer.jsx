@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ItemList } from './itemList/ItemList'
 import data from '../data/data.json'
 import { Container } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 
 export const ItemListContainer = (props) => {
 
@@ -10,11 +10,11 @@ export const ItemListContainer = (props) => {
 
     const [arrayProductos, setArrayProductos] = useState([]);
 
-    const { category } = useParams();
+    // const { category } = useParams();
 
     useEffect(() => {
 
-        console.log(category);
+        // console.log(category);
         const promesaProd = new Promise((resolve) => {
             setTimeout(() => {
                 resolve(data)
@@ -24,21 +24,23 @@ export const ItemListContainer = (props) => {
         promesaProd
             .then((res) => {
                 console.log(res);
-                if (category) {
+                setArrayProductos(res)
+                // if (category) {
 
-                    res = res.filter(item => item.category === category)
-                    setArrayProductos(res)
-                } else {
-                    setArrayProductos(res)
-                }
+                //     res = res.filter(item => item.category === category)
+                //     setArrayProductos(res)
+                // } else {
+                //     setArrayProductos(res)
+                // }
 
             })
 
-    }, [category])
+    }, [])
 
     return (
         <div>
             <h1 className='titulo-1'>{props.gretting}</h1>
+
 
             <Container fluid="md">
 

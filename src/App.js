@@ -5,6 +5,7 @@ import NavBar from './components/navBar/NavBar';
 import { ItemListContainer } from './components/itemListContainer/ItemListContainer';
 import { ItemDetailContainer } from './components/itemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Categoria } from './components/categoria/Categoria';
 
 
 function App() {
@@ -22,7 +23,8 @@ function App() {
           </Route>
 
           <Route  path='/categoria/:category'>
-            <ItemListContainer gretting={"Bienvenidos a la Tienda"} />
+            {/* <ItemListContainer gretting={"Bienvenidos a la Tienda"} /> */}
+            <Categoria />
           </Route>
 
           <Route path='/producto/:id'>

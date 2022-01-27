@@ -5,8 +5,8 @@ import '../itemDetail/style.css'
 
 export const ItemDetail = ({ producto }) => {
 
-    function onAdd() {
-            alert(` Reservaste el paquete pasaje para ${producto.title} \n Total a pagar ${producto.price}`)
+    function onAdd(cantidad,precio) {
+            alert(` Reservaste ${cantidad} pasajes para ${producto.title} \n Total a pagar ${precio}`)
     }
     return (
         <div className='bckDetail'>

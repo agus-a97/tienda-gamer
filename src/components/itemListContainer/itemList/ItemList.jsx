@@ -1,17 +1,18 @@
 import React from 'react';
 import { Item } from '../item/Item'
-import { Button, Spinner, Row, CardGroup } from 'react-bootstrap';
+import { Button, Spinner, Row, CardGroup, } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
 
 export const ItemList = (arrayProductos) => {
 
-    
+    const { category } = useParams();
 
     console.log(arrayProductos.arrayProductos);
     return (
         <>
             <Row className="justify-content-md-center">
 
-                <h3>Lista de productos:</h3>
+            {(category)?<h3>Categoria: {category} </h3>:<h3>Lista de productos:</h3>}
                 <CardGroup>
                 {
                     (arrayProductos.arrayProductos.length > 0) ?
