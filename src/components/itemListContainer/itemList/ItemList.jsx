@@ -4,6 +4,8 @@ import { Button, Spinner, Row, CardGroup } from 'react-bootstrap';
 
 export const ItemList = (arrayProductos) => {
 
+    
+
     console.log(arrayProductos.arrayProductos);
     return (
         <>

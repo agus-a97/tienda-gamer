@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { ItemCount } from './itemCount/ItemCount'
 import { ItemList } from './itemList/ItemList'
 import data from '../data/data.json'
 import { Container } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
 
 export const ItemListContainer = (props) => {
 
@@ -10,8 +10,11 @@ export const ItemListContainer = (props) => {
 
     const [arrayProductos, setArrayProductos] = useState([]);
 
+    const { category } = useParams();
+
     useEffect(() => {
 
+        console.log(category);
         const promesaProd = new Promise((resolve) => {
             setTimeout(() => {
                 resolve(data)
@@ -21,17 +24,21 @@ export const ItemListContainer = (props) => {
         promesaProd
             .then((res) => {
                 console.log(res);
-                setArrayProductos(res)
+                if (category) {
+
+                    res = res.filter(item => item.category === category)
+                    setArrayProductos(res)
+                } else {
+                    setArrayProductos(res)
+                }
 
             })
 
-    }, [])
+    }, [category])
 
     return (
         <div>
             <h1 className='titulo-1'>{props.gretting}</h1>
-
-            <ItemCount initial={1} stock={5} />
 
             <Container fluid="md">
 

@@ -1,0 +1,27 @@
+
+.bckDetail{
+    border: 1px solid gray ;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.89);
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr;
+    grid-column-gap: 7px;
+    grid-row-gap: 1px;
+    }
+  .imgDetail{
+    margin: 10px;
+      padding: 10px;  
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  .imgTamaño{
+    width: 500px;
+    height: 500px;
+  }
+  .divDetail{
+      margin: 10px;
+      padding: 10px;
+      border: 1px solid gray ;
+      border-radius: 5px;
+    grid-area: 1 / 2 / 2 / 3;
+  }

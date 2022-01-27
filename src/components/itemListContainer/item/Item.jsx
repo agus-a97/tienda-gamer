@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Card, Button, ButtonGroup, Col } from 'react-bootstrap'
+import { Link } from 'react-router-dom';
 
 export const Item = ({ product }) => {
 
@@ -46,15 +47,15 @@ export const Item = ({ product }) => {
                             <br />
                             Reserva Minima: {product.initial}
                             <br />
-                            Cantidad: {count}
-                            <br />
-                            Total: {acum}
+                            Clima: {product.category}
+
                         </Card.Text>
 
                         <ButtonGroup aria-label="Basic example">
-                            <Button variant="secondary" onClick={restarProd}>-</Button>
-                            <Button variant="secondary" onClick={onAdd}>Agregar</Button>
-                            <Button variant="secondary" onClick={sumarProd}>+</Button>
+                            <Link to={`/producto/${product.id}`}>
+                                <Button variant="primary">Ver detalle</Button>
+                            </Link>
+
                         </ButtonGroup>
 
                     </Card.Body>
