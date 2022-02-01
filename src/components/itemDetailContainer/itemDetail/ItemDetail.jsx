@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Card, Button, Container, Row } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import { ItemCount } from '../../itemDetailContainer/itemCount/ItemCount'
 import '../itemDetail/style.css'
 
@@ -28,14 +29,16 @@ export const ItemDetail = ({ producto }) => {
                 </Card.Text>
 
                 <Container>
-                    <Row className="justify-content-md-center">
-                        {
-                            (mostrarItemCount) ?
-                                <ItemCount producto={producto} onAdd={onAdd} />
-                                :
-                                <Button variant="success" size="lg" >Terminar Compra</Button>
-                        }
-                    </Row>
+                    {
+                        (mostrarItemCount) ?
+                            <ItemCount producto={producto} onAdd={onAdd} />
+                            :
+                            <Link to={'/cart'}>
+                                <Row className="justify-content-md-center">
+                                    <Button variant="success" size="lg" >Terminar Compra</Button>
+                                </Row>
+                            </Link>
+                    }
                 </Container>
             </div>
         </div>
