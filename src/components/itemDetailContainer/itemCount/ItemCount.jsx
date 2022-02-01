@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Card, Button, ButtonGroup } from 'react-bootstrap'
+import { Card, Button, ButtonGroup, Row } from 'react-bootstrap'
 
 export const ItemCount = ({ producto, onAdd }) => {
 
@@ -35,11 +35,13 @@ export const ItemCount = ({ producto, onAdd }) => {
                 Total a pagar: {acum}
             </Card.Text>
 
-            <ButtonGroup aria-label="Basic example">
-                <Button variant="primary" onClick={restarProd}>-</Button>
-                <Button variant="primary" onClick={()=> onAdd(count,acum)}>Agregar</Button>
-                <Button variant="primary" onClick={sumarProd}>+</Button>
-            </ButtonGroup>
+            <Row className="justify-content-md-center">
+                <ButtonGroup aria-label="Basic example" size="lg" >
+                    <Button variant="primary" onClick={restarProd}>-</Button>
+                    <Button variant="primary" onClick={() => onAdd(count, acum)}>Agregar</Button>
+                    <Button variant="primary" onClick={sumarProd}>+</Button>
+                </ButtonGroup>
+            </Row>
 
         </div>
     )

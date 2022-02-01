@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
-import { Card, Button, ButtonGroup, Col } from 'react-bootstrap'
+import { Card, Button, Container, Row } from 'react-bootstrap'
 import { ItemCount } from '../../itemDetailContainer/itemCount/ItemCount'
 import '../itemDetail/style.css'
 
 export const ItemDetail = ({ producto }) => {
 
-    function onAdd(cantidad,precio) {
-            alert(` Reservaste ${cantidad} pasajes para ${producto.title} \n Total a pagar ${precio}`)
+    const [mostrarItemCount, setMostrarItemCount] = useState(true);
+
+
+    function onAdd(cantidad, precio) {
+        alert(` Reservaste ${cantidad} pasajes para ${producto.title} \n Total a pagar ${precio}`)
+        setMostrarItemCount(false)
     }
     return (
         <div className='bckDetail'>
@@ -23,7 +27,16 @@ export const ItemDetail = ({ producto }) => {
                     <br />
                 </Card.Text>
 
-                <ItemCount producto={producto} onAdd={onAdd} />
+                <Container>
+                    <Row className="justify-content-md-center">
+                        {
+                            (mostrarItemCount) ?
+                                <ItemCount producto={producto} onAdd={onAdd} />
+                                :
+                                <Button variant="success" size="lg" >Terminar Compra</Button>
+                        }
+                    </Row>
+                </Container>
             </div>
         </div>
     )
