@@ -7,38 +7,43 @@ import { ItemDetailContainer } from './components/itemDetailContainer/ItemDetail
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Categoria } from './components/categoria/Categoria';
 import { Cart } from './components/cart/Cart';
+import CartContext from './components/cartContext/CartContext';
 
 
 function App() {
   return (
     <>
+      <CartContext>
 
-      <BrowserRouter>
+        <BrowserRouter>
 
-        <NavBar />
+          <NavBar />
 
-        <Switch>
+          <Switch>
 
-          <Route  exact path='/'>
-            <ItemListContainer gretting={"Bienvenidos a la Tienda"} />
-          </Route>
+            <Route exact path='/'>
+              <ItemListContainer gretting={"Bienvenidos a la Tienda"} />
+            </Route>
 
-          <Route  path='/categoria/:category'>
-            {/* <ItemListContainer gretting={"Bienvenidos a la Tienda"} /> */}
-            <Categoria />
-          </Route>
+            <Route path='/categoria/:category'>
+              {/* <ItemListContainer gretting={"Bienvenidos a la Tienda"} /> */}
+              <Categoria />
+            </Route>
 
-          <Route path='/producto/:id'>
-            <ItemDetailContainer />
-          </Route>
+            <Route path='/producto/:id'>
+              <ItemDetailContainer />
+            </Route>
 
-          <Route exact path='/cart'>
-            <Cart />
-          </Route>
+            <Route exact path='/cart'>
+              <Cart />
+            </Route>
 
-        </Switch>
+          </Switch>
 
-      </BrowserRouter>
+        </BrowserRouter>
+
+      </CartContext>
+      
     </>
   );
 }

@@ -7,7 +7,7 @@ export const ItemList = (arrayProductos) => {
 
     const { category } = useParams();
 
-    console.log(arrayProductos.arrayProductos);
+
     return (
         <>
             <Row className="justify-content-md-center">
@@ -18,7 +18,6 @@ export const ItemList = (arrayProductos) => {
                     (arrayProductos.arrayProductos.length > 0) ?
                         <>
                             {arrayProductos.arrayProductos.map(item => {
-                                console.log(item);
                                 return <Item product={item} />
                             })}
                         </>

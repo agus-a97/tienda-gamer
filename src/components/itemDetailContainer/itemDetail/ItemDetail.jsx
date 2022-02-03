@@ -1,16 +1,20 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Card, Button, Container, Row } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import { contexto } from '../../cartContext/CartContext'
 import { ItemCount } from '../../itemDetailContainer/itemCount/ItemCount'
 import '../itemDetail/style.css'
 
 export const ItemDetail = ({ producto }) => {
+
+    const { addToCart }=useContext(contexto);
 
     const [mostrarItemCount, setMostrarItemCount] = useState(true);
 
 
     function onAdd(cantidad, precio) {
         alert(` Reservaste ${cantidad} pasajes para ${producto.title} \n Total a pagar ${precio}`)
+        addToCart(producto,cantidad)
         setMostrarItemCount(false)
     }
     return (

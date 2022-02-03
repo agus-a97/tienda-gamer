@@ -12,7 +12,6 @@ export const ItemDetailContainer = () => {
     const {id}= useParams()
 
     useEffect(() => {
-        console.log(id);
 
         const promesaProd = new Promise((resolve) => {
             setTimeout(() => {
@@ -24,7 +23,6 @@ export const ItemDetailContainer = () => {
             .then((res) => {
                 res = res.find(item => item.id == id)
                 setProducto(res)
-                console.log(res);
 
             })
 

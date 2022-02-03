@@ -23,7 +23,7 @@ export const ItemListContainer = (props) => {
 
         promesaProd
             .then((res) => {
-                console.log(res);
+                
                 setArrayProductos(res)
                 // if (category) {
 

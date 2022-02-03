@@ -7,7 +7,6 @@ export const ItemCount = ({ producto, onAdd }) => {
     const [acum, setAcum] = useState(producto.price);
 
     function sumarProd() {
-        console.log("suma");
         const newValue = count + 1;
         const newPrice = acum + producto.price
         if (newValue <= producto.stock) {
@@ -17,7 +16,6 @@ export const ItemCount = ({ producto, onAdd }) => {
     }
 
     function restarProd() {
-        console.log("resta");
         const newValue = count - 1;
         const newPrice = acum - producto.price
         if (newValue >= producto.initial) {
