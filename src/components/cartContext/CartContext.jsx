@@ -21,9 +21,6 @@ const CartContext = ({ children }) => {
         }
     }
 
-    const removeItem=(id)=>{
-        return cart.filter(element => element.item.id !== id);
-    }
 
     const isInCart = (id) => {
         return cart.some(element => element.item.id === id)
@@ -35,7 +32,7 @@ const CartContext = ({ children }) => {
 
     return (
         <>
-            <contexto.Provider value={{ cart, addToCart, removeItem, clear }}>
+            <contexto.Provider value={{ cart, addToCart, clear }}>
                 {children}
             </contexto.Provider>
         </>
