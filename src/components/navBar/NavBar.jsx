@@ -12,17 +12,17 @@ export default function NavBar() {
                 <Container>
                     <Navbar.Brand >Reservas Online</Navbar.Brand>
                     <Nav className="me-auto">
-                        <Nav.Link ><Link to={'/'} bg="primary">Inicio</Link></Nav.Link>
-                        <Nav.Link ><Link to={'/'}>Productos</Link></Nav.Link>
+                        <Nav.Link ><Link to={'/'} bg="primary" style={{textDecoration: 'none'}}>Inicio</Link></Nav.Link>
+                        <Nav.Link ><Link to={'/'} style={{textDecoration: 'none'}}>Productos</Link></Nav.Link>
 
                         <NavDropdown title="Climas" id="nav-dropdown">
-                            <NavDropdown.Item ><Link to={'/categoria/humedo'}>Humedo</Link></NavDropdown.Item>
-                            <NavDropdown.Item ><Link to={'/categoria/frio'}>Frio</Link></NavDropdown.Item>
-                            <NavDropdown.Item ><Link to={'/categoria/templado'}>Templado</Link></NavDropdown.Item>
+                            <NavDropdown.Item ><Link to={'/categoria/humedo'} style={{textDecoration: 'none'}}>Humedo</Link></NavDropdown.Item>
+                            <NavDropdown.Item ><Link to={'/categoria/frio'} style={{textDecoration: 'none'}}>Frio</Link></NavDropdown.Item>
+                            <NavDropdown.Item ><Link to={'/categoria/templado'} style={{textDecoration: 'none'}}>Templado</Link></NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
 
-                    <CartWidget />
+                    <Link to={'/cart'} style={{textDecoration: 'none'}}><CartWidget /></Link>                    
 
                 </Container>
             </Navbar>

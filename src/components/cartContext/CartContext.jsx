@@ -15,6 +15,7 @@ const CartContext = ({ children }) => {
             console.log(indexProduct);
 
             cart[indexProduct].count = cart[indexProduct].count + count
+            setCart([...cart])
 
         } else {
             setCart([...cart, { item: product, count }])
@@ -26,13 +27,23 @@ const CartContext = ({ children }) => {
         return cart.some(element => element.item.id === id)
     }
 
-    const clear=()=>{
+    const clearCart=()=>{
         setCart([]);
+    }
+
+    const deleteItem = (id) =>{
+        const cartActualizada = cart.filter( element => element.item.id !== id)
+        setCart(cartActualizada);
+    }
+
+    const sumarTotalCart = () =>{
+        console.log(cart.map(item=>item.item.price*item.count).reduce((a,b)=>a+b));
+        return (cart.length > 0)?cart.map(item=>item.item.price*item.count).reduce((a,b)=>a+b) : 0;
     }
 
     return (
         <>
-            <contexto.Provider value={{ cart, addToCart, clear }}>
+            <contexto.Provider value={{ cart, addToCart, clearCart, deleteItem,sumarTotalCart }}>
                 {children}
             </contexto.Provider>
         </>

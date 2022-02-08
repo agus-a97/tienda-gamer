@@ -37,7 +37,7 @@ export const ItemDetail = ({ producto }) => {
                         (mostrarItemCount) ?
                             <ItemCount producto={producto} onAdd={onAdd} />
                             :
-                            <Link to={'/cart'}>
+                            <Link to={'/cart'} style={{textDecoration: 'none'}}>
                                 <Row className="justify-content-md-center">
                                     <Button variant="success" size="lg" >Terminar Compra</Button>
                                 </Row>
