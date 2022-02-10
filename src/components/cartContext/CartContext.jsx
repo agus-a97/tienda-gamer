@@ -11,11 +11,11 @@ const CartContext = ({ children }) => {
         //si existe suma la cantidad existente
         if (isInCart(product.id)) {
 
-            const indexProduct = cart.findIndex(element => element.item.id === product.id)
-            console.log(indexProduct);
-
-            cart[indexProduct].count = cart[indexProduct].count + count
-            setCart([...cart])
+            setCart(
+                cart.map((item) =>
+                    item.item.id === product.id ? { ...item, count: item.count + count } : item
+                )
+            )
 
         } else {
             setCart([...cart, { item: product, count }])
@@ -37,7 +37,6 @@ const CartContext = ({ children }) => {
     }
 
     const sumarTotalCart = () =>{
-        console.log(cart.map(item=>item.item.price*item.count).reduce((a,b)=>a+b));
         return (cart.length > 0)?cart.map(item=>item.item.price*item.count).reduce((a,b)=>a+b) : 0;
     }
 

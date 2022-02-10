@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { ItemList } from './itemList/ItemList'
-import data from '../data/data.json'
 import { Container } from 'react-bootstrap';
-// import { useParams } from 'react-router-dom';
+import { getFirestore } from '../../firebase/firebase';
+import { useParams } from 'react-router-dom';
 
 export const ItemListContainer = (props) => {
 
@@ -10,32 +10,41 @@ export const ItemListContainer = (props) => {
 
     const [arrayProductos, setArrayProductos] = useState([]);
 
-    // const { category } = useParams();
+    const { categoryId } = useParams();
 
     useEffect(() => {
 
-        // console.log(category);
-        const promesaProd = new Promise((resolve) => {
-            setTimeout(() => {
-                resolve(data)
-            }, 5000)
-        })
+        const dataBase = getFirestore()
 
-        promesaProd
-            .then((res) => {
-                
-                setArrayProductos(res)
-                // if (category) {
 
-                //     res = res.filter(item => item.category === category)
-                //     setArrayProductos(res)
-                // } else {
-                //     setArrayProductos(res)
-                // }
+        if (categoryId) {
+            dataBase
+                .collection("items")
+                .where("categoryId", "==", categoryId)
+                .get()
+                .then((res) =>
+                    setArrayProductos(
+                        res.docs.map((item) => ({ ...item.data(), id: item.id }))
+                    )
+                )
+                .catch((err) =>
+                    console.log("CATEGORY: error reading items form firebase => ", err)
+                );
+        } else {
+            dataBase
+                .collection("items")
+                .get()
+                .then((res) =>
+                    setArrayProductos(
+                        res.docs.map((item) => ({ ...item.data(), id: item.id }))
+                    )
+                )
+                .catch((err) =>
+                    console.log("HOME: error reading items form firebase => ", err)
+                );
+        }
 
-            })
-
-    }, [])
+    }, [categoryId])
 
     return (
         <div>

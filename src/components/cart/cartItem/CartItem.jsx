@@ -6,7 +6,7 @@ import { contexto } from '../../cartContext/CartContext';
 export const CartItem = (product) => {
 
     const { deleteItem } = useContext(contexto)
-    console.log(product);
+    
     return (
         <div style={{
             margin: '15px',

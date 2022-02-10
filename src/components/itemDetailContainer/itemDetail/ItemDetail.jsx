@@ -5,7 +5,7 @@ import { contexto } from '../../cartContext/CartContext'
 import { ItemCount } from '../../itemDetailContainer/itemCount/ItemCount'
 import '../itemDetail/style.css'
 
-export const ItemDetail = ({ producto }) => {
+export const ItemDetail = ({initial, producto }) => {
 
     const { addToCart }=useContext(contexto);
 
@@ -13,14 +13,14 @@ export const ItemDetail = ({ producto }) => {
 
 
     function onAdd(cantidad, precio) {
-        alert(` Reservaste ${cantidad} pasajes para ${producto.title} \n Total a pagar ${precio}`)
+        alert(` Reservaste ${cantidad} ${producto.title} \n Total a pagar ${precio}`)
         addToCart(producto,cantidad)
         setMostrarItemCount(false)
     }
     return (
         <div className='bckDetail'>
             <div className='imgDetail'>
-                <img src={producto.pictureUrl} alt={producto.title} className='imgTamaño' />
+                <img src={producto.imageId} alt={producto.title} className='imgTamaño' />
             </div>
             <div className='divDetail'>
                 <h3>{producto.title}</h3>
@@ -28,14 +28,14 @@ export const ItemDetail = ({ producto }) => {
                 <Card.Text>
                     Precio: {producto.price}
                     <br />
-                    Reserva Minima: {producto.initial}
+                    Compra Minima: {initial}
                     <br />
                 </Card.Text>
 
                 <Container>
                     {
                         (mostrarItemCount) ?
-                            <ItemCount producto={producto} onAdd={onAdd} />
+                            <ItemCount initial={initial} producto={producto} onAdd={onAdd} />
                             :
                             <Link to={'/cart'} style={{textDecoration: 'none'}}>
                                 <Row className="justify-content-md-center">

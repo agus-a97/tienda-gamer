@@ -25,9 +25,9 @@ function App() {
               <ItemListContainer gretting={"Bienvenidos a la Tienda"} />
             </Route>
 
-            <Route path='/categoria/:category'>
-              {/* <ItemListContainer gretting={"Bienvenidos a la Tienda"} /> */}
-              <Categoria />
+            <Route path='/categoria/:categoryId'>
+              <ItemListContainer gretting={"Bienvenidos a la Tienda"} />
+              {/* <Categoria /> */}
             </Route>
 
             <Route path='/producto/:id'>

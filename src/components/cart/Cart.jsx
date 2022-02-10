@@ -7,7 +7,6 @@ import { CartItem } from './cartItem/CartItem';
 export const Cart = () => {
 
   const { cart, clearCart, sumarTotalCart } = useContext(contexto)
-  console.log(cart);
 
   return <div>
     {(cart.length === 0) ?

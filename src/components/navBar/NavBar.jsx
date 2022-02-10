@@ -15,10 +15,10 @@ export default function NavBar() {
                         <Nav.Link ><Link to={'/'} bg="primary" style={{textDecoration: 'none'}}>Inicio</Link></Nav.Link>
                         <Nav.Link ><Link to={'/'} style={{textDecoration: 'none'}}>Productos</Link></Nav.Link>
 
-                        <NavDropdown title="Climas" id="nav-dropdown">
-                            <NavDropdown.Item ><Link to={'/categoria/humedo'} style={{textDecoration: 'none'}}>Humedo</Link></NavDropdown.Item>
-                            <NavDropdown.Item ><Link to={'/categoria/frio'} style={{textDecoration: 'none'}}>Frio</Link></NavDropdown.Item>
-                            <NavDropdown.Item ><Link to={'/categoria/templado'} style={{textDecoration: 'none'}}>Templado</Link></NavDropdown.Item>
+                        <NavDropdown title="Categorias" id="nav-dropdown">
+                            <NavDropdown.Item ><Link to={'/categoria/juegos'} style={{textDecoration: 'none'}}>Juegos</Link></NavDropdown.Item>
+                            <NavDropdown.Item ><Link to={'/categoria/consolas'} style={{textDecoration: 'none'}}>Consolas</Link></NavDropdown.Item>
+                            <NavDropdown.Item ><Link to={'/categoria/computacion'} style={{textDecoration: 'none'}}>Computacion</Link></NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
 
