@@ -5,9 +5,9 @@ import NavBar from './components/navBar/NavBar';
 import { ItemListContainer } from './components/itemListContainer/ItemListContainer';
 import { ItemDetailContainer } from './components/itemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { Categoria } from './components/categoria/Categoria';
 import { Cart } from './components/cart/Cart';
 import CartContext from './components/cartContext/CartContext';
+import Checkout from './components/checkout/Checkout';
 
 
 function App() {
@@ -27,7 +27,6 @@ function App() {
 
             <Route path='/categoria/:categoryId'>
               <ItemListContainer gretting={"Bienvenidos a la Tienda"} />
-              {/* <Categoria /> */}
             </Route>
 
             <Route path='/producto/:id'>
@@ -36,6 +35,10 @@ function App() {
 
             <Route exact path='/cart'>
               <Cart />
+            </Route>
+
+            <Route exact path='/checkout'>
+              <Checkout />
             </Route>
 
           </Switch>

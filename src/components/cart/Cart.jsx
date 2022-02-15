@@ -8,6 +8,8 @@ export const Cart = () => {
 
   const { cart, clearCart, sumarTotalCart } = useContext(contexto)
 
+  console.log(cart);
+
   return <div>
     {(cart.length === 0) ?
       <>
@@ -29,21 +31,31 @@ export const Cart = () => {
             margin: '15px',
           }}>
 
-          <h3>Carrito:</h3>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+
+            <h3>Carrito:</h3>
+
+            <Link to={'/'}><Button variant='success' style={{ margin: '5px' }}>Seguir Comprando</Button></Link>
+            <Button variant="danger" onClick={clearCart} style={{ margin: '5px' }}>Vaciar Carro</Button>
+
+          </div>
 
           <div >
             {cart.map(element => <CartItem key={element.item.id} product={element} />)}
           </div>
 
           <div style={{
-            margin:'10px',
-            display:'flex',
-            alignItems:'baseline'
+            margin: '10px',
+            display: 'flex',
+            alignItems: 'baseline'
           }}>
 
             <p>Total a pagar: ${sumarTotalCart()}</p>
-            <Link to={'/'}><Button variant='success' style={{ margin: '5px' }}>Seguir Comprando</Button></Link>
-            <Button variant="danger" onClick={clearCart} style={{ margin: '5px' }}>Vaciar Carro</Button>
+
+            <Link to={'/checkout'}>
+              <Button variant='success' style={{ margin: '5px' }}>Terminar Compra</Button>
+            </Link>
+
           </div>
 
 
