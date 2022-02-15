@@ -4,7 +4,7 @@ import { getFirestore } from '../../firebase/firebase';
 import { contexto } from '../cartContext/CartContext';
 import { Form, Button } from 'react-bootstrap';
 
-const Checkout = () => {
+const Formulario = () => {
 
     const { cart, sumarTotalCart,clearCart } = useContext(contexto);
 
@@ -115,4 +115,4 @@ const Checkout = () => {
     )
 }
 
-export default Checkout
+export default Formulario

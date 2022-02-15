@@ -17,8 +17,6 @@ export const Item = ({ product }) => {
                         <Card.Text>
                             Precio: {product.price}
                             <br />
-                            Compra Minima: {product.initial}
-                            <br />
                             Categoria: {product.categoryId}
 
                         </Card.Text>

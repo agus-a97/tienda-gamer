@@ -7,7 +7,7 @@ import { ItemDetailContainer } from './components/itemDetailContainer/ItemDetail
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Cart } from './components/cart/Cart';
 import CartContext from './components/cartContext/CartContext';
-import Checkout from './components/checkout/Checkout';
+import Formulario from './components/formulario/Formulario';
 
 
 function App() {
@@ -37,8 +37,8 @@ function App() {
               <Cart />
             </Route>
 
-            <Route exact path='/checkout'>
-              <Checkout />
+            <Route exact path='/formulario'>
+              <Formulario />
             </Route>
 
           </Switch>

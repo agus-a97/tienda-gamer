@@ -52,7 +52,7 @@ export const Cart = () => {
 
             <p>Total a pagar: ${sumarTotalCart()}</p>
 
-            <Link to={'/checkout'}>
+            <Link to={'/formulario'}>
               <Button variant='success' style={{ margin: '5px' }}>Terminar Compra</Button>
             </Link>
 
