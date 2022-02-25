@@ -23,7 +23,6 @@ En el proyecto se muestran productos, listandolos por categorias, mostrando su d
 |---|
 |<img width='600' align='right' src='public\image\muestra1.gif'> |
 | Formulario  |
-|---|
 |<img width='600' align='left' src='public\image\formulario.gif'> |
 
 ## Como usar el proyecto
@@ -37,6 +36,6 @@ En el proyecto se muestran productos, listandolos por categorias, mostrando su d
 
 Este proyecto no hubiera sido posible sin la ayuda de mi tutor Ivan y el profesor Guillermo que nos salvo las papas a todos los de la camada.
 
-Espero que les guste Agustin Aguilar
+Espero que les guste <a href='https://www.linkedin.com/in/agustin-aguilar/'> Agustin Aguilar </a>
 
 25/02/2022
