@@ -13,7 +13,6 @@ export const ItemDetail = ({initial, producto }) => {
 
 
     function onAdd(cantidad, precio) {
-        alert(` Reservaste ${cantidad} ${producto.title} \n Total a pagar ${precio}`)
         addToCart(producto,cantidad)
         setMostrarItemCount(false)
     }
@@ -24,7 +23,7 @@ export const ItemDetail = ({initial, producto }) => {
             </div>
             <div className='divDetail'>
                 <h3>{producto.title}</h3>
-                <article>{producto.description}</article>
+                <article className='description'>{producto.description}</article>
                 <Card.Text>
                     Precio: {producto.price}
                     <br />

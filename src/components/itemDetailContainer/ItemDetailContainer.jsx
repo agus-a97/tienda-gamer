@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ItemDetail } from './itemDetail/ItemDetail';
-import data from '../data/data.json'
-import { Container } from 'react-bootstrap'
+import { Container, Spinner } from 'react-bootstrap'
 import { useParams } from 'react-router-dom';
 import { getFirestore } from '../../firebase/firebase';
 
@@ -23,10 +22,6 @@ export const ItemDetailContainer = () => {
         myItem.get()
             .then((doc) => {
 
-                /* console.log(doc.data());
-                console.log(doc.id);
-        
-                console.log({ id: doc.id, ...doc.data() }); */
 
                 if (!doc.exists) {
                     console.log('no existe ese documento');
@@ -44,17 +39,22 @@ export const ItemDetailContainer = () => {
     }, [id])
 
     return <>
-        <h2>Esto es ItemDetailContainer</h2>
 
         {(producto) ?
             <>
-                <Container fluid="md">
+                <Container fluid="md" style={{ margin: '10%' }}>
                     <ItemDetail initial={1} producto={producto} />
                 </Container>
             </>
             :
             <>
-                <p>Cargando ItemDetail</p>
+            <div style={{margin:'25% 20%'}}>
+                <h2>Cargando</h2>
+                <Spinner animation="grow" variant="primary" />
+                <Spinner animation="grow" variant="dark" />
+                <Spinner animation="grow" variant="primary" />
+                <Spinner animation="grow" variant="dark" />
+            </div>
             </>}
 
 

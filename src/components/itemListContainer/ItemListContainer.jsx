@@ -6,8 +6,6 @@ import { useParams } from 'react-router-dom';
 
 export const ItemListContainer = (props) => {
 
-    //aca tiene que ir la logica para para pasarla al item list que resuelva como producto
-
     const [arrayProductos, setArrayProductos] = useState([]);
 
     const { categoryId } = useParams();
@@ -47,11 +45,11 @@ export const ItemListContainer = (props) => {
     }, [categoryId])
 
     return (
-        <div>
+        <div style={{margin:'5%'}}>
             <h1 className='titulo-1'>{props.gretting}</h1>
 
 
-            <Container fluid="md">
+            <Container fluid>
 
                 <ItemList arrayProductos={arrayProductos} />
             </Container>

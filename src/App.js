@@ -8,6 +8,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { Cart } from './components/cart/Cart';
 import CartContext from './components/cartContext/CartContext';
 import Formulario from './components/formulario/Formulario';
+import Footer from './components/footer/Footer';
 
 
 function App() {
@@ -42,6 +43,8 @@ function App() {
             </Route>
 
           </Switch>
+
+          <Footer />
 
         </BrowserRouter>
 

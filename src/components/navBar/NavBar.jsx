@@ -10,7 +10,7 @@ export default function NavBar() {
         <>
             <Navbar bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand >Compras Online</Navbar.Brand>
+                    <Navbar.Brand >Tienda Gamer</Navbar.Brand>
                     <Nav className="me-auto">
                         <Nav.Link ><Link to={'/'} bg="primary" style={{textDecoration: 'none'}}>Inicio</Link></Nav.Link>
                         <Nav.Link ><Link to={'/'} style={{textDecoration: 'none'}}>Productos</Link></Nav.Link>

@@ -7,8 +7,7 @@ const CartContext = ({ children }) => {
     const [cart, setCart] = useState([]);
 
     const addToCart = (product, count) => {
-        //pregunta si existe un producto con ese id, sino existe lo agrega al carrito
-        //si existe suma la cantidad existente
+        
         if (isInCart(product.id)) {
 
             setCart(

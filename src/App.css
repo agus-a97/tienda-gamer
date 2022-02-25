@@ -1,5 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+
 .titulo-1 {
   margin-left: 20px;
   margin-top: 20px; 
 };
 
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+.footer{
+  margin-top: 100px;
+}
